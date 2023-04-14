@@ -11,22 +11,22 @@ export type ThemeType = {
 
 export const CustomDefaultTheme: ThemeType = {
   colors: {
-    primary: '#6200ee',
-    accent: '#03dac4',
-    background: '#f6f6f6',
+    primary: '#EDE8DD',
+    accent: '#013849',
+    background: '#EDE8DD',
     surface: '#ffffff',
     error: '#B00020',
-    text: '#000000',
+    text: '#013849',
   },
 };
 
 export const CustomDarkTheme: ThemeType = {
   colors: {
-    primary: '#bb86fc',
-    accent: '#03dac4',
-    background: '#121212',
+    primary: '#013849',
+    accent: '#EDE8DD',
+    background: '#013849',
     surface: '#121212',
     error: '#CF6679',
-    text: '#ffffff',
+    text: '#EDE8DD',
   },
 };

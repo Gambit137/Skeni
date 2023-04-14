@@ -12,7 +12,7 @@ export function ThemedButton2({ onPress, imageSr, title }: ButtonProps) {
   const theme = useContext(ThemeContext)!;
 
   return (
-    <TouchableOpacity onPress={onPress} style={[styles.button, { backgroundColor: theme.colors.primary }]}>
+    <TouchableOpacity onPress={onPress} style={[styles.button, { backgroundColor: theme.colors.primary, borderColor: theme.colors.accent }]}>
       <Image source={imageSr} style={styles.image} />
       <Text style={[styles.text, { color: theme.colors.text }]}>{title}</Text>
     </TouchableOpacity>
@@ -21,21 +21,13 @@ export function ThemedButton2({ onPress, imageSr, title }: ButtonProps) {
 
 const styles = StyleSheet.create({
   button: {
+    borderWidth: 1,
     borderRadius: 15,
     width: '80%',
     height: 60,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
-    elevation: 5,
   },
   text: {
     fontSize: 18,

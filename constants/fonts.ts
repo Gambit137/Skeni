@@ -1,6 +1,5 @@
 import { StyleSheet } from "react-native";
-import { useFonts, NotoSansYi_400Regular } from '@expo-google-fonts/noto-sans-yi';
-import React, { useContext, createContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as Font from 'expo-font';
 
 export const useCustomFonts = () => {

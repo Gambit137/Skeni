@@ -1,14 +1,12 @@
-import React, { useContext, createContext, useEffect, useState } from 'react';
-import { View, Text, StyleSheet, useColorScheme, ActivityIndicator, Image } from 'react-native';
+import React, { useContext, useState } from 'react';
+import { View, Text, StyleSheet, useColorScheme, ActivityIndicator } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { useFonts } from 'expo-font';
-import { useCustomFonts, fonts, fontFamilies } from './constants/fonts';
-import { CustomDefaultTheme, CustomDarkTheme, ThemeType } from './constants/Theme';
+import { useCustomFonts, fonts } from './constants/Fonts';
+import { CustomDefaultTheme, CustomDarkTheme } from './constants/Theme';
 import { ThemedButton } from './components/googleBtn';
 import { ThemedButton2 } from './components/facebookBtn';
 import ThemeContext from './context/ThemeContext';
-import * as SplashScreen from 'expo-splash-screen';
-import * as Font from 'expo-font';
+
 
 export default function App() {
   const fontsLoaded = useCustomFonts();
@@ -16,33 +14,13 @@ export default function App() {
   const theme = colorScheme === 'light' ? CustomDefaultTheme : CustomDarkTheme;
   const [appIsReady, setAppIsReady] = useState(false);
 
-  useEffect(() => {
-    async function prepareApp() {
-      try {
-        await SplashScreen.preventAutoHideAsync();
-
-        await Font.loadAsync({
-          'Signika-Light': require('./assets/fonts/Signika/static/Signika-Light.ttf'),
-          'Signika-Regular': require('./assets/fonts/Signika/static/Signika-Regular.ttf'),
-          'Signika-Medium': require('./assets/fonts/Signika/static/Signika-Medium.ttf'),
-          'Signika-SemiBold': require('./assets/fonts/Signika/static/Signika-SemiBold.ttf'),
-          'Signika-Bold': require('./assets/fonts/Signika/static/Signika-Bold.ttf'),
-        });
-      } catch (error) {
-        console.warn(error);
-      } finally {
-        setAppIsReady(true);
-      }
-    }
-
-    prepareApp();
-  }, []);
-
-  useEffect(() => {
-    if (appIsReady) {
-      SplashScreen.hideAsync();
-    }
-  }, [appIsReady]);
+    if (!fontsLoaded) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
 
   return (
     <ThemeContext.Provider value={theme}>

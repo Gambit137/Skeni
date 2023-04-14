@@ -14,7 +14,7 @@ export function ThemedButton({ onPress, imageSr, title }: ButtonProps) {
   return (
     <TouchableOpacity onPress={onPress} style={[styles.button, { backgroundColor: theme.colors.accent }]}>
       <Image source={imageSr} style={styles.image} />
-      <Text style={[styles.text, { color: theme.colors.text }]}>{title}</Text>
+      <Text style={[styles.text, { color: theme.colors.primary }]}>{title}</Text>
     </TouchableOpacity>
   );
 }
@@ -27,15 +27,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
-    elevation: 5,
   },
   text: {
     fontSize: 18,
