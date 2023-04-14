@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import React, { useEffect, useState } from 'react';
-import * as Font from 'expo-font';
+import React, { useEffect, useState } from "react";
+import * as Font from "expo-font";
 
 export const useCustomFonts = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -8,11 +8,11 @@ export const useCustomFonts = () => {
   useEffect(() => {
     async function loadFonts() {
       await Font.loadAsync({
-        'Signika-Light': require('../assets/fonts/Signika/static/Signika-Light.ttf'),
-        'Signika-Regular': require('../assets/fonts/Signika/static/Signika-Regular.ttf'),
-        'Signika-Medium': require('../assets/fonts/Signika/static/Signika-Medium.ttf'),
-        'Signika-SemiBold': require('../assets/fonts/Signika/static/Signika-SemiBold.ttf'),
-        'Signika-Bold': require('../assets/fonts/Signika/static/Signika-Bold.ttf'),
+        "Signika-Light": require("../assets/fonts/Signika/static/Signika-Light.ttf"),
+        "Signika-Regular": require("../assets/fonts/Signika/static/Signika-Regular.ttf"),
+        "Signika-Medium": require("../assets/fonts/Signika/static/Signika-Medium.ttf"),
+        "Signika-SemiBold": require("../assets/fonts/Signika/static/Signika-SemiBold.ttf"),
+        "Signika-Bold": require("../assets/fonts/Signika/static/Signika-Bold.ttf"),
       });
 
       setFontsLoaded(true);
@@ -75,10 +75,10 @@ export const fonts = StyleSheet.create({
 
 export const loadCustomFonts = () => {
   return Font.loadAsync({
-    'Signika-Light': require('../assets/fonts/Signika/static/Signika-Light.ttf'),
-    'Signika-Regular': require('../assets/fonts/Signika/static/Signika-Regular.ttf'),
-    'Signika-Medium': require('../assets/fonts/Signika/static/Signika-Medium.ttf'),
-    'Signika-SemiBold': require('../assets/fonts/Signika/static/Signika-SemiBold.ttf'),
-    'Signika-Bold': require('../assets/fonts/Signika/static/Signika-Bold.ttf'),
+    "Signika-Light": require("../assets/fonts/Signika/static/Signika-Light.ttf"),
+    "Signika-Regular": require("../assets/fonts/Signika/static/Signika-Regular.ttf"),
+    "Signika-Medium": require("../assets/fonts/Signika/static/Signika-Medium.ttf"),
+    "Signika-SemiBold": require("../assets/fonts/Signika/static/Signika-SemiBold.ttf"),
+    "Signika-Bold": require("../assets/fonts/Signika/static/Signika-Bold.ttf"),
   });
 };
