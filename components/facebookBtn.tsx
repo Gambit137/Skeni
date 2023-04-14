@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    fontSize: 18,
+    fontSize: 16,
+    width: "80%",
   },
   image: {
     width: 50,

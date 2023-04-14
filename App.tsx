@@ -72,7 +72,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    height: "60%",
+    minHeight: "60%",
+    paddingHorizontal: 20,
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
@@ -87,5 +88,6 @@ const styles = StyleSheet.create({
   text: {
     textAlign: "center",
     marginHorizontal: 20,
+    width: "80%",
   },
 });
